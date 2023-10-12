@@ -1,3 +1,11 @@
+// let,const,var
+
+var PI = 3.14;
+PI = 42; // stop me from doing this
+
+const PI =3.14;
+
+//arrowMethods
 
 function double(arr) {
     return arr.map(function(val) {
