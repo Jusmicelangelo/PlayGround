@@ -99,3 +99,82 @@ const update = (obj, key, val) => {
     newObj[key] = val 
     return newObj
 }
+
+
+// ES2015 Object Enhancement
+// Exercise 1
+function createInstructor(firstName, lastName){
+    return {
+      firstName: firstName,
+      lastName: lastName
+    }
+  }
+
+// ES2015 Version of createInstructor   
+const createInstructor2 = (firstName, lastName) => {
+    return {
+        firstName,
+        lastName,
+    }
+}
+
+//Exercise 2
+var favoriteNumber = 42;
+
+var instructor = {
+  firstName: "Colt"
+}
+
+instructor[favoriteNumber] = "That is my favorite!"
+
+// ES2015 Version of Exercise 2 
+const instructor2 = (favoriteNumber) => {
+    return {
+        firstName: "Colt",
+        [favoriteNumber]: "That is my favorite!"
+    }
+}
+
+
+// Exercise 3 
+var instructor = {
+    firstName: "Colt",
+    sayHi: function(){
+      return "Hi!";
+    },
+    sayBye: function(){
+      return this.firstName + " says bye!";
+    }
+  }
+
+// ES2015 Version of Exercise 3
+
+const instructor3 = () => {
+    return {
+        firstName: "Colt",
+        sayHi () {
+            return "Hi!";
+        },
+        sayBye () {
+            return this.firstName + " says bye!";
+        },
+    }
+}
+
+// Exercise 4
+const d = createAnimal("dog", "bark", "Woooof!")
+// {species: "dog", bark: ƒ}
+d.bark()  //"Woooof!"
+
+const s = createAnimal("sheep", "bleet", "BAAAAaaaa")
+// {species: "sheep", bleet: ƒ}
+s.bleet() //"BAAAAaaaa"
+
+const createAnimal2 = (species, verb, noise) => {
+    return {
+        species,
+        [verb]() {
+            return noise
+        }
+    }
+}
