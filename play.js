@@ -178,3 +178,35 @@ const createAnimal2 = (species, verb, noise) => {
         }
     }
 }
+
+// Destructuring
+// Exercise 1
+var obj = {
+    numbers: {
+      a: 1,
+      b: 2
+    }
+  };
+  
+  var a = obj.numbers.a;
+  var b = obj.numbers.b;
+
+  const { a,b } = obj.numbers 
+
+// Exercise 2
+
+var arr = [1, 2];
+var temp = arr[0];
+arr[0] = arr[1];
+arr[1] = temp;
+
+[arr[0], arr[1]] = [arr[1], arr[0]]
+
+//Race Results
+
+const raceResults = ([first, second, third, ...rest]) => { 
+    first,
+    second,
+    third,
+    rest
+ }
