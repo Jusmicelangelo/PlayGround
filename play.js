@@ -162,13 +162,13 @@ const instructor3 = () => {
 }
 
 // Exercise 4
-const d = createAnimal("dog", "bark", "Woooof!")
-// {species: "dog", bark: ƒ}
-d.bark()  //"Woooof!"
+// const d = createAnimal("dog", "bark", "Woooof!")
+// // {species: "dog", bark: ƒ}
+// d.bark()  //"Woooof!"
 
-const s = createAnimal("sheep", "bleet", "BAAAAaaaa")
-// {species: "sheep", bleet: ƒ}
-s.bleet() //"BAAAAaaaa"
+// const s = createAnimal("sheep", "bleet", "BAAAAaaaa")
+// // {species: "sheep", bleet: ƒ}
+// s.bleet() //"BAAAAaaaa"
 
 const createAnimal2 = (species, verb, noise) => {
     return {
@@ -181,17 +181,17 @@ const createAnimal2 = (species, verb, noise) => {
 
 // Destructuring
 // Exercise 1
-var obj = {
-    numbers: {
-      a: 1,
-      b: 2
-    }
-  };
+// var obj = {
+//     numbers: {
+//       a: 1,
+//       b: 2
+//     }
+//   };
   
-  var a = obj.numbers.a;
-  var b = obj.numbers.b;
+//   var a = obj.numbers.a;
+//   var b = obj.numbers.b;
 
-  const { a,b } = obj.numbers 
+//   const { a,b } = obj.numbers 
 
 // Exercise 2
 
@@ -204,9 +204,34 @@ arr[1] = temp;
 
 //Race Results
 
-const raceResults = ([first, second, third, ...rest]) => { 
+const raceResults = ([first, second, third, ...rest]) => ({ 
     first,
     second,
     third,
     rest
- }
+ })
+
+// map,set
+// Exercise 1
+
+const hasDuplicate = (arr) => new set(arr) < arr.length 
+
+// Exercise 2
+
+const isVowel = (char) => "aeiou".includes(char)
+
+const vowelCount = (str) => {
+    const vowelCountMap = new Map()
+    for (let char of str) {
+        if (isVowel(char)) {
+            if (vowelCountMap.has(char)) {
+                vowelCountMap.set(char, vowelCountMap.get(char) + 1)
+            }
+            else {
+                vowelCountMap.set(char, 1)
+            }
+        }
+       
+    }
+    return vowelCountMap
+}
